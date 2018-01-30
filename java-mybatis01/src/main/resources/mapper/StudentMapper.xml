@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tedu.dao.StudentDao">
+    <!--查询-->
+    <select id="select" parameterType="int" resultType="com.tedu.entity.Student">
+        select * from t_student where id = #{id}
+    </select>
+
+    <!--添加-->
+    <insert id="insert" parameterType="com.tedu.entity.Student">
+       insert into t_student values (#{id},#{name},#{sex},#{address})
+    </insert>
+    <!--删除-->
+    <delete id="delete" parameterType="int">
+        delete from t_student where id = #{id}
+    </delete>
+    <!--修改-->
+    <update id="update" parameterType="com.tedu.entity.Student" >
+        update t_student set name =  #{name} where id =  #{id}
+    </update>
+    <!--查询所有-->
+    <select id="findById" parameterType="com.tedu.entity.Student" resultType="com.tedu.entity.Student">
+        select * from t_student
+    </select>
+</mapper>

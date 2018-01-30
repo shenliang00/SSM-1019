@@ -1,4 +1,4 @@
-package com.ssm.entity;
+package com.tedu.entity;
 
 public class Student {
     private int id;
@@ -35,3 +35,4 @@ public class Student {
     }
 
 }
+
