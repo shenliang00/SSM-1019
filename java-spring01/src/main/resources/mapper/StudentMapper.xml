@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为了分辨多个mybatis的映射文件同名问题所以使用接口包名作为空间 -->
+<mapper namespace="com.ssm.dao.StudentDao">
+  <!-- 查询所有 -->
+  <select id="selectFind" parameterType="com.ssm.entity.Student" resultType="com.ssm.entity.Student">
+    select * from t_student 
+  </select>
+  
+  <!-- 添加 -->
+  <insert id="add" parameterType="com.ssm.entity.Student">
+     insert into t_student values (#{id},#{name},#{sex},#{address})
+  </insert>
+  
+  <!-- 删除 -->
+   <delete id="delete" parameterType="int">
+     delete from t_student where id = #{id}
+   </delete>
+  
+  <!-- 修改 -->
+  <update id="update" parameterType="com.ssm.entity.Student">
+     update t_student set name = #{name} where id = #{id}
+  </update>
+  
+  <!-- 查询 -->
+  <select id="select" parameterType="com.ssm.entity.Student" resultType="com.ssm.entity.Student">
+   select * from t_student where name = #{name}
+  </select>  
+</mapper>
